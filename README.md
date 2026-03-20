@@ -1,5 +1,5 @@
    <p align="center">
-     <img src="./assets/skill-sonar-logo.jpg" alt="Skill Sonar Logo" width="120" />
+     <img src="./assets/skill-sonar.jpg" alt="Skill Sonar Logo" width="120" />
    </p>
 
 
@@ -12,6 +12,14 @@
      <a href="https://skill-sonar.github.io/skill-sonar"><strong>Website</strong></a> ·
      <a href="https://clawhub.ai/yxf203/skill-sonar"><strong>ClawHub</strong></a>
    </p>
+
+## 🚀 Features
+
+* **Deep Code Sonar**: Continuously sweeps and analyzes your logic to detect hidden vulnerabilities, bugs, and inefficiencies with high precision.
+* **Robust Security Shield**: Built-in security protocols and advanced checks ensure your environment remains safe, locked down, and resilient against potential threats.
+* **Precision Node Mapping**: Intelligently traces dependencies, execution paths, and skill nodes to provide crystal-clear visibility into your architecture.
+* **Real-Time Threat Detection**: Instant "sonar pings" and alerts notify you of potential risks or code smells the moment they are introduced.
+* **Seamless Integration**: Designed to be lightweight and effortlessly integrate into your existing developer workflows and CI/CD pipelines.
 
 ## Install
 
