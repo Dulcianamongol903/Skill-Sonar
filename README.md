@@ -2,28 +2,27 @@
      <img src="./assets/skill-sonar.png" alt="Skill Sonar Logo" width="120" />
    </p>
 
-
    <p align="center">
-     A lifecycle-aware security skill for AI agents, covering both <strong>pre-install inspection</strong> and <strong>runtime monitoring</strong>.
+     🛡️ A lifecycle-aware security skill for AI agents, covering both <strong>pre-install inspection</strong> and <strong>runtime monitoring</strong>.
    </p>
    <p align="center">
-     <a href="https://skill-sonar.github.io/skill-sonar"><strong>Website</strong></a> ·
-     <a href="https://clawhub.ai/yxf203/skill-sonar"><strong>ClawHub</strong></a>
+     <a href="https://skill-sonar.github.io/skill-sonar">🌐 <strong>Website</strong></a>
+     &nbsp;·&nbsp;
+     <a href="https://clawhub.ai/yxf203/skill-sonar">🦞 <strong>ClawHub</strong></a>
    </p>
-
 ## 🚀 Features
 
-* **Deep Code Sonar**: Continuously sweeps and analyzes your logic to detect hidden vulnerabilities, bugs, and inefficiencies with high precision.
-* **Robust Security Shield**: Built-in security protocols and advanced checks ensure your environment remains safe, locked down, and resilient against potential threats.
-* **Precision Node Mapping**: Intelligently traces dependencies, execution paths, and skill nodes to provide crystal-clear visibility into your architecture.
-* **Real-Time Threat Detection**: Instant "sonar pings" and alerts notify you of potential risks or code smells the moment they are introduced.
-* **Seamless Integration**: Designed to be lightweight and effortlessly integrate into your existing developer workflows and CI/CD pipelines.
+- **Deep Code Sonar** — Continuously sweeps and analyzes your logic to detect hidden vulnerabilities, bugs, and inefficiencies with high precision.
+- **Robust Security Shield** — Built-in security protocols and advanced checks ensure your environment remains safe, locked down, and resilient against potential threats.
+- **Precision Node Mapping** — Intelligently traces dependencies, execution paths, and skill nodes to provide crystal-clear visibility into your architecture.
+- **Real-Time Threat Detection** — Instant “sonar pings” and alerts notify you of potential risks or code smells the moment they are introduced.
+- **Seamless Integration** — Designed to be lightweight and effortlessly integrate into your existing developer workflows and CI/CD pipelines.
 
-## Install
+## 📦 Install
 
 You can install **Skill Sonar** in either of the following ways:
 
-### 1. Install via the official npm-based method
+### 1️⃣ Install via the official npm-based method
 
 Use the standard installation flow supported by your agent platform.
 
@@ -37,11 +36,11 @@ or
 npx clawhub@latest install skill-sonar
 ```
 
-### 2. Install manually
+### 2️⃣ Install manually
 
 Download the Skill Sonar files directly, then move the skill into the `skills` directory under your corresponding OpenClaw (`.openclaw`) workspace.
 
-## Quick Start
+## ⚡ Quick Start
 
 ### Check a skill before installation
 
@@ -55,7 +54,7 @@ use skill-sonar to check xxx skills
 use skill-sonar to monitor this session
 ```
 
-## Modes
+## 🎛️ Modes
 
 Skill Sonar supports **three operating modes**:
 
@@ -83,7 +82,7 @@ Enable only the **runtime check**.
 only use the runtime check
 ```
 
-## What It Does
+## 🎯 What It Does
 
 Skill Sonar protects the **full lifecycle of the agent loop** across two stages:
 
@@ -92,59 +91,54 @@ Skill Sonar protects the **full lifecycle of the agent loop** across two stages:
 
 This allows you to use a single unified security skill for both **skill review** and **in-session protection**.
 
-## Design Highlights
+## ✨ Design Highlights
 
 ### Document-level routing
 
 Skill Sonar uses **document-level routing** instead of relying on config files, installation parameters, or external orchestration.
 
-A single entry document reads the current context, determines whether the agent is in a **pre-install** or **runtime** scenario, and routes execution to the appropriate guard path.
+The entry skill document reads the current context, decides **preflight** (vetting a skill before install) vs **runtime** (monitoring an active session), and loads the corresponding guard path.
 
-This design keeps the system:
+This keeps integration:
 
 - lightweight
-- easy to integrate
 - easy for agents to invoke
-- flexible enough to support either full protection or stage-specific protection
+- flexible for full protection or stage-only use
 
-More importantly, routing helps prevent the agent from being overloaded with irrelevant guard logic all at once, allowing it to focus on the checks that actually matter at the current stage.
+Routing also avoids pulling in guard logic that does not apply to the current situation, so the agent can focus on the checks that matter for that stage.
 
-### On-demand loading
+### Preflight: single-file guard
 
-Skill Sonar is designed for **on-demand loading**.
+**Preflight** review is delivered as **one self-contained document** (`preflight/preflight-guard.md`). The methodology, risk areas, and audit protocol live together so install-time inspection does not depend on chasing multiple linked files for the core workflow.
 
-It does not preload every guard, checklist, or analysis file upfront. Instead, the agent loads only the components required for the current stage and the current risk signals.
+### Runtime: on-demand loading
 
-This means:
+**On-demand loading** applies mainly to **runtime**. The runtime entry (`runtime/runtime-guard.md`) establishes triage and policy; **stage guards** and **checklists** under `runtime/` are loaded when triggers or risk levels (R1+) call for them, not as a single upfront bundle.
 
-- clean cases remain lightweight
-- suspicious cases trigger deeper analysis only when needed
-- runtime overhead stays low
-- token usage scales with actual risk rather than total framework size
+That way:
 
-This also improves practical security coverage: rather than spending context budget on everything equally, the agent can devote more attention to areas that appear genuinely suspicious, making it easier to reason more deeply about complex or compound threats.
+- R0-style steps stay lightweight
+- deeper stage/checklist material appears only when something actually escalates
+- token use tracks real risk rather than the size of the whole runtime tree
 
 ### Token-efficient by design
 
-Skill Sonar is built to minimize unnecessary context usage.
+Skill Sonar is built to keep context usage proportional to need.
 
-- The entry layer handles routing instead of loading everything upfront
-- Stage-specific files are only used when relevant
-- Deep analysis is triggered only for flagged areas
-- Full lifecycle coverage does not require full upfront cost
+- The entry layer routes preflight vs runtime before loading either path
+- Preflight is intentionally consolidated into one file for the primary audit flow
+- Runtime pulls in stage and checklist documents only when the guard path requires them
 
-This makes Skill Sonar especially well suited for agent environments where **token budget, context size, and routing clarity** all matter.
+This makes Skill Sonar a good fit when **token budget, context size, and routing clarity** all matter: preflight stays a single load for review sessions, while runtime avoids paying the full guard catalog on every turn.
 
-By reducing wasted context, Skill Sonar leaves more room for the agent to consider a broader range of relevant security factors, connect signals across stages, and produce more focused judgments instead of shallow all-at-once checks.
-
-## Typical Use Cases
+## 💡 Typical Use Cases
 
 - Audit a skill before installing it
 - Add runtime monitoring during a sensitive session
 - Use full lifecycle protection for untrusted or third-party skills
 - Apply lightweight security guarding in OpenClaw workflows
 
-## Notes
+## 📝 Notes
 
 - For complete lifecycle protection, use **full protection** mode.
 - If you only need one stage, specify it explicitly in your prompt.
